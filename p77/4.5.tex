@@ -1,0 +1,86 @@
+\documentclass{article}
+%
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{tikz}
+\usepackage{xstring}
+%
+\usetikzlibrary{positioning, arrows.meta, automata}
+%
+%
+\begin{document}
+%
+\begin{center}
+  \begin{tikzpicture}[->,>=stealth,node distance=2cm,semithick,initial text=,]
+    \node[initial,state]  (s1)             {};
+    \node[state]          (s2)[right of=s1]{待定};
+    \node[state]          (s3)[above of=s2]{赢|P={$\frac{8}{36}$}};
+    \node[state]          (s4)[below of=s2]{输|P={$\frac{4}{36}$}};
+
+    \node[state]          (s5)[above right of=s3]{${B_7^1}$};
+    \node[state]          (s6)[above of=s5]{${B_{11}^1}$};
+    \node[state]          (s7)[below right of=s4]{${B_2^1}$};
+    \node[state]          (s9)[below of=s7]{${B_3^1}$};
+    \node[state]          (s8)[below of=s9]{${B_{12}^1}$};
+    
+    
+    \node[state]          (s10)[right of=s2]{待定};
+    \node[state]          (s11)[right of=s10]{${B_6^1}$};
+    \node[state]          (s12)[above of=s11]{${B_5^1}$};
+    \node[state]          (s13)[above of=s12]{${B_4^1}$};
+    \node[state]          (s14)[below of=s11]{${B_8^1}$};
+    \node[state]          (s15)[below of=s14]{${B_9^1}$};
+    \node[state]          (s16)[below of=s15]{${B_{10}^1}$};
+
+    \node[state]          (s17)[above right of=s13]{赢|P=${\frac{3}{36}}$};
+    \node[state]          (s18)[right of=s17]{${B_4^2}$};
+    \node[state]          (s19)[right of=s13]{待定};
+    \node[state]          (s22)[right of=s19]{...};
+    \node[state]          (s20)[below right of=s13]{输|P=${\frac{6}{36}}$};
+    \node[state]          (s21)[right of=s20]{${B_7^2}$};
+    \node[state]          (s23)[above right of=s15]{赢|P=${\frac{4}{36}}$};
+    \node[state]          (s24)[right of=s23]{${B_9^2}$};
+    \node[state]          (s25)[right of=s15]{待定};
+    \node[state]          (s26)[right of=s25]{...};
+    \node[state]          (s27)[below right of=s15]{输|P=${\frac{6}{36}}$};
+    \node[state]          (s28)[right of=s27]{${B_7^2}$};
+
+
+    %
+    \path (s5) edge node[above = 0.5pt]{} (s3)
+          (s6) edge node [above left = 1pt]{} (s3)
+          (s7) edge node [above left = 1pt]{} (s4)
+          (s9) edge node [above left = 1pt]{} (s4)
+          (s8) edge node [above left = 1pt]{} (s4)
+          (s1) edge node [above left = 1pt]{} (s2)
+          (s1) edge node [above left = 1pt]{} (s4)
+          (s1) edge node [above left = 1pt]{} (s3)
+          (s2) edge node [above left = 1pt]{} (s10)
+          (s10) edge node [above left = 1pt]{} (s11)
+          (s10) edge node [above left = 1pt]{} (s12)
+          (s10) edge node [above left = 1pt]{} (s13)
+          (s10) edge node [above left = 1pt]{} (s14)
+          (s10) edge node [above left = 1pt]{} (s15)
+          (s10) edge node [above left = 1pt]{} (s16)
+          (s13) edge node [above left = 1pt]{} (s17)
+          (s13) edge node [above left = 1pt]{} (s19)
+          (s13) edge node [above left = 1pt]{} (s20)
+          (s17) edge node [above left = 1pt]{} (s18)
+          (s19) edge node [above left = 1pt]{} (s22)
+          (s20) edge node [above left = 1pt]{} (s21)
+          (s15) edge node [above left = 1pt]{} (s23)
+          (s15) edge node [above left = 1pt]{} (s25)
+          (s15) edge node [above left = 1pt]{} (s27)
+          (s23) edge node [above left = 1pt]{} (s24)
+          (s25) edge node [above left = 1pt]{} (s26)
+          (s27) edge node [above left = 1pt]{} (s28)
+          
+          
+          
+          ;
+  \end{tikzpicture}
+  \heiti\\ 图4.5 双骰子游戏概率树\songti
+\end{center}
+%
+\end{document}

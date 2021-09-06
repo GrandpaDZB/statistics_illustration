@@ -1,0 +1,44 @@
+\documentclass{article}
+%
+\usepackage{mathbbol}
+
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage[mathscr]{euscript}
+\usepackage{tikz}
+\usepackage{xstring}
+%
+
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning, arrows.meta, automata}
+%
+%
+\begin{document}
+%
+\begin{center}
+  \begin{tikzpicture}[->,>=stealth,node distance=2cm,semithick,initial text=,]
+
+    \draw[->] (-1,0) to (10,0);
+    \draw[->] (0,-1) to (0,5);
+
+    \draw[-] (0, 5) node [left = 0.1cm]{$N_t(\omega)$};
+    \draw[-] (10, 0) node [below = 0.1cm]{$t$};
+
+    \draw[-] (0,0) node [below left = 0.1cm]{0};
+
+    \foreach \x in {1,2,3,4} \draw[-] (2*\x-1,-1pt)--(2*\x-1,1pt) node[anchor=north]{$T_{\x}(\omega)$};
+	\foreach \y in {1,2,3,4} \draw[-,yshift=\y cm] (0,0)--(0,0) node [anchor=east]{$\y$};
+
+    \foreach \i in {0,1,2,3,4} \fill (2*\i, \i) circle (2pt);
+    \foreach \i in {0,1,2,3} \draw[-] (2*\i+2, \i) circle (2pt);
+    \foreach \i in {0,1,2,3,4} \draw[-] (2*\i, \i) to (2*\i+2, \i);
+    \foreach \i in {0,1,2,3} \draw[-,dashed] (2*\i+2, 0) to (2*\i+2, \i+1);
+    
+
+
+  \end{tikzpicture}
+  \heiti\\ 图8.19 Poisson过程的一个轨道\songti
+\end{center}
+%
+\end{document}

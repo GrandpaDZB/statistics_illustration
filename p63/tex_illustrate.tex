@@ -36,16 +36,17 @@
 \draw (0,0) circle (2);
 \draw[red] (0,0) circle (1);
 \draw[red] (0,0)--(b2);
-\draw[red, dashed] (0,0)--(-90:1) node[midway,left]{r/2};
+\draw[red, dashed] (0,0)--(-90:1) node[midway,right]{r/2};
+\draw[red, dashed] (0,0)--(210:2) node[midway,left]{r};
 \draw[red, loosely dashed] (10:2)--(170:2);
 \draw[red, loosely dashed] (-50:2)--(-130:2);
 
 \tikzset{shift={(5,0)}};
 \fill (0,2) circle (.1) node[above]{A};
 \fill (0,1) circle (.1) node[left]{B};
-\fill (0,-1) circle (.1) node[left]{O};
-\fill (0,-2) circle (.1) node[below]{C};
-\fill (0,0) circle (.1) node[left]{D};
+\fill (0,-1) circle (.1) node[left]{C};
+\fill (0,-2) circle (.1) node[below]{D};
+\fill (0,0) circle (.1) node[left]{O};
 \draw (0,0) circle (2);
 \draw[dashed] (30:2)--(150:2);
 \draw[dashed] (-30:2)--(-150:2);
